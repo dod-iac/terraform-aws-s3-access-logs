@@ -1,0 +1,7 @@
+SELECT *
+FROM ${ database_and_table_name }
+WHERE Key='prefix/images/picture.jpg' AND
+parse_datetime(requestdatetime,'dd/MMM/yyyy:HH:mm:ss Z')
+BETWEEN parse_datetime('2020-09-18:07:00:00','yyyy-MM-dd:HH:mm:ss')
+AND
+parse_datetime('2020-09-18:08:00:00','yyyy-MM-dd:HH:mm:ss');

@@ -1,0 +1,6 @@
+SELECT SUM(bytessent) as uploadtotal,
+SUM(objectsize) as downloadtotal,
+SUM(bytessent + objectsize) AS total
+FROM ${ database_and_table_name }
+WHERE remoteIP='1.2.3.4' and parse_datetime(requestdatetime,'dd/MMM/yyyy:HH:mm:ss Z')
+BETWEEN parse_datetime('2020-07-01','yyyy-MM-dd') and parse_datetime('2020-08-01','yyyy-MM-dd');

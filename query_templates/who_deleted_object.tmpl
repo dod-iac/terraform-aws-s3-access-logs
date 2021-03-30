@@ -1,0 +1,3 @@
+SELECT requestdatetime, remoteip, requester, key
+FROM ${ database_and_table_name } WHERE
+key = 'images/picture.jpg' AND operation like '%DELETE%';
