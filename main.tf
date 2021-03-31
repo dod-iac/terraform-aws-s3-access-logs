@@ -38,6 +38,7 @@
  */
 
 data "aws_caller_identity" "current" {}
+data "aws_partition" "current" {}
 
 module "aws_s3_bucket_kms_key" {
   source  = "dod-iac/s3-kms-key/aws"

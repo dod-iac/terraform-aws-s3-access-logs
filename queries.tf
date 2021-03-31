@@ -19,6 +19,7 @@ data "template_file" "query" {
   vars = {
     account_id              = data.aws_caller_identity.current.account_id
     database_and_table_name = format("%s.%s", local.db_name, local.db_name)
+    partition               = data.aws_partition.current.partition
     target_location         = format("%s/%s", var.target_bucket, var.target_prefix)
   }
 }
