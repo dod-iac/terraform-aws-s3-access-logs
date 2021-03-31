@@ -73,6 +73,7 @@ This project constitutes a work of the United States Government and is not subje
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_bytes_scanned_cutoff_per_query"></a> [bytes\_scanned\_cutoff\_per\_query](#input\_bytes\_scanned\_cutoff\_per\_query) | Integer for the upper data usage limit (cutoff) for the amount of bytes a single query in a workgroup is allowed to scan. Must be at least 10485760. | `number` | `-1` | no |
 | <a name="input_logging_bucket"></a> [logging\_bucket](#input\_logging\_bucket) | The S3 bucket to send logs for query results bucket | `string` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | Unique name for the set of logs being analyzed | `string` | `"s3-access-logs"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to the resources | `map(string)` | <pre>{<br>  "Automation": "Terraform"<br>}</pre> | no |

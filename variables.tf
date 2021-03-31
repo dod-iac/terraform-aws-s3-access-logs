@@ -21,6 +21,12 @@ variable "target_prefix" {
   description = "The S3 prefix to target for s3 access logs"
 }
 
+variable "bytes_scanned_cutoff_per_query" {
+  type        = number
+  description = "Integer for the upper data usage limit (cutoff) for the amount of bytes a single query in a workgroup is allowed to scan. Must be at least 10485760."
+  default     = -1
+}
+
 variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to the resources"

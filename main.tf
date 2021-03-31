@@ -59,8 +59,8 @@ module "query_results" {
   kms_master_key_id        = module.aws_s3_bucket_kms_key.aws_kms_key_arn
   logging_bucket           = var.logging_bucket
   sse_algorithm            = "aws:kms"
-  tags                     = var.tags
   use_account_alias_prefix = false
+  tags                     = var.tags
 }
 
 module "athena_workgroup" {
@@ -70,7 +70,10 @@ module "athena_workgroup" {
   kms_key_arn       = module.aws_s3_bucket_kms_key.aws_kms_key_arn
   name              = var.project
   output_location   = format("s3://%s/", module.query_results.id)
-  tags              = var.tags
+
+  bytes_scanned_cutoff_per_query = var.bytes_scanned_cutoff_per_query
+
+  tags = var.tags
 }
 
 locals {
