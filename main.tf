@@ -77,10 +77,14 @@ module "athena_workgroup" {
 }
 
 locals {
-  db_name = replace(var.project, "-", "_")
+  db_name    = length(var.database_name) > 0 ? var.database_name : replace(var.project, "-", "_")
+  table_name = length(var.table_name) > 0 ? var.table_name : local.db_name
 }
 
 resource "aws_athena_database" "access_logs" {
+  # Create only if DB name is not given
+  count = length(var.database_name) > 0 ? 0 : 1
+
   # https://docs.aws.amazon.com/athena/latest/ug/tables-databases-columns-names.html
   name   = local.db_name
   bucket = module.query_results.id

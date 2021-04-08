@@ -27,6 +27,18 @@ variable "bytes_scanned_cutoff_per_query" {
   default     = -1
 }
 
+variable "database_name" {
+  type        = string
+  description = "The name of an existing database. If none exists then a new athena database will be created."
+  default     = ""
+}
+
+variable "table_name" {
+  type        = string
+  description = "The name of an existing table. If none exists then a new athena database will be created."
+  default     = ""
+}
+
 variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to the resources"
