@@ -40,22 +40,21 @@ This project constitutes a work of the United States Government and is not subje
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 0.13.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.0 |
-| <a name="requirement_template"></a> [template](#requirement\_template) | ~> 2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.0 |
-| <a name="provider_template"></a> [template](#provider\_template) | ~> 2.0 |
+| <a name="provider_template"></a> [template](#provider\_template) | n/a |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_athena_workgroup"></a> [athena\_workgroup](#module\_athena\_workgroup) | dod-iac/athena-workgroup/aws |  |
+| <a name="module_athena_workgroup"></a> [athena\_workgroup](#module\_athena\_workgroup) | dod-iac/athena-workgroup/aws | n/a |
 | <a name="module_aws_s3_bucket_kms_key"></a> [aws\_s3\_bucket\_kms\_key](#module\_aws\_s3\_bucket\_kms\_key) | dod-iac/s3-kms-key/aws | ~> 1.0.1 |
 | <a name="module_query_results"></a> [query\_results](#module\_query\_results) | trussworks/s3-private-bucket/aws | 3.4.0 |
 
